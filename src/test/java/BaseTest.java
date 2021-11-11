@@ -21,7 +21,7 @@ public class BaseTest {
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
 
-        //conver json file content to json string
+        //convert json file content to json string
         String jsonContent = FileUtils.readFileToString(new File(jsonFilePath),
                 StandardCharsets.UTF_8);
 
