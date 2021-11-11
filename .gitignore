@@ -6,3 +6,8 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/.idea/.gitignore
+/.idea/d.plaksin_task3.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
