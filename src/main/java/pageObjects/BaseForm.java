@@ -6,11 +6,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public abstract class BaseForm {
-    BaseElement uniqueElement;
-    String pageName;
 
-    public boolean isPageOpen() {
-        // Todo - написать проверку загрузился ли
-        return DriverSingletonClass.getInstance().findElements(By.xpath(uniqueElement.xpath)).size() > 0;
+
+    BaseElement uniqueElement;
+
+    public BaseForm(BaseElement element) {
+        this.uniqueElement = element;
     }
+
+    public boolean isOpen() {
+        // Todo - написать проверку загрузился ли
+        // return uniqueElement.exists();
+      /*  return DriverSingletonClass.getInstance().findElements
+                (By.xpath(String.valueOf(uniqueElement.locator)).size() > 0*/
+        ;
+
+        return true;
+    }
+
+
 }

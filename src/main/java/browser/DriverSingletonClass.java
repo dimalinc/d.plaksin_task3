@@ -16,6 +16,7 @@ public class DriverSingletonClass {
 
     private DriverSingletonClass() {
         driver = driverInit();
+
     }
 
     // TODO вынести в BrowserFactory

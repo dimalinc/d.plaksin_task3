@@ -8,6 +8,12 @@
         </classes>
     </test>
 
+    <test name="Test3_Elements">
+        <classes>
+            <class name="Test3_Elements"/>
+        </classes>
+    </test>
+
 
     <!-- Test -->
 </suite> <!-- Suite -->
