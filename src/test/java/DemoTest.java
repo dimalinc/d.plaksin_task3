@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DemoTest extends BaseTest{
-    WebDriver driver;
+  /*  WebDriver driver;
     TravelHomePage travelHomePage;
 
     @BeforeTest
@@ -54,5 +54,5 @@ public class DemoTest extends BaseTest{
                 {
                         { l.get(0)},  { l.get(1)}
                 };
-    }
+    }*/
 }
