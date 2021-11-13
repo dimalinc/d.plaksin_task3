@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class DivFrame extends BaseElement{
 
     private By locator = By.xpath("//div[@class='main-header']");
-    private String elementName = "Frames div";
+    private String elementName = "Main header div";
 
 
     public DivFrame() {

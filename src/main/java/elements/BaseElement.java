@@ -45,4 +45,8 @@ public abstract class BaseElement {
     public String getText() {
         return findElement().getText();
     }
+
+    public void enterText(String text) {
+        findElement().sendKeys(text);
+    }
 }
