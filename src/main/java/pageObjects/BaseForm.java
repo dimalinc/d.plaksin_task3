@@ -2,11 +2,9 @@ package pageObjects;
 
 import browser.DriverSingletonClass;
 import elements.BaseElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 
 public abstract class BaseForm {
-
 
     BaseElement uniqueElement;
 
@@ -20,6 +18,4 @@ public abstract class BaseForm {
         return DriverSingletonClass.getInstance().findElements
                 (uniqueElement.getLocator()).size() > 0 ;
     }
-
-
 }

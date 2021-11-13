@@ -13,6 +13,7 @@ public class HomePage extends BaseForm{
     private Button_AlertsFrameAndWindows_Alerts_ClickButtonToSeeAlert button_alertsFrameAndWindows_alerts_clickButtonToSeeAlert = new Button_AlertsFrameAndWindows_Alerts_ClickButtonToSeeAlert();
     private Button_AlertsFrameAndWindows_Alerts_OnButtonClickConfirmBoxAppears button_alertsFrameAndWindows_alerts_onButtonClickConfirmBoxAppears = new Button_AlertsFrameAndWindows_Alerts_OnButtonClickConfirmBoxAppears();
     private Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears alertsFrameAndWindows_alerts_onButtonClickPROMPTboxAppears = new Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears();
+    private Button_AlertsFrameAndWindows_NestedFrames button_alertsFrameAndWindows_nestedFrames = new Button_AlertsFrameAndWindows_NestedFrames();
 
 
 
@@ -23,6 +24,10 @@ public class HomePage extends BaseForm{
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;
+    }
+
+    public Button_AlertsFrameAndWindows_NestedFrames getButton_alertsFrameAndWindows_nestedFrames() {
+        return button_alertsFrameAndWindows_nestedFrames;
     }
 
     public Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears getAlertsFrameAndWindows_alerts_onButtonClickPROMPTboxAppears() {
