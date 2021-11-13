@@ -15,6 +15,9 @@ public class HomePage extends BaseForm{
     private Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears alertsFrameAndWindows_alerts_onButtonClickPROMPTboxAppears = new Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears();
 
 
+
+
+
     public HomePage() {
     super(uniqueElement);
     }

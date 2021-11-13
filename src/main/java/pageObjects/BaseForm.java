@@ -17,11 +17,8 @@ public abstract class BaseForm {
     public boolean isOpen() {
         // Todo - написать проверку загрузился ли
         // return uniqueElement.exists();
-      /*  return DriverSingletonClass.getInstance().findElements
-                (By.xpath(String.valueOf(uniqueElement.locator)).size() > 0*/
-        ;
-
-        return true;
+        return DriverSingletonClass.getInstance().findElements
+                (uniqueElement.getLocator()).size() > 0 ;
     }
 
 

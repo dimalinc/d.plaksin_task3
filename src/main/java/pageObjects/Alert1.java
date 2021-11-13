@@ -1,9 +1,9 @@
 package pageObjects;
 
 import browser.DriverSingletonClass;
+import browser.Wait;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -14,8 +14,7 @@ public class Alert1 {
 
     public Alert getAlert() {
         //Wait for the alert to be displayed and store it in a variable
-        Wait wait = new WebDriverWait(DriverSingletonClass.getInstance(), Duration.ofSeconds(3));
-        alert = new WebDriverWait(DriverSingletonClass.getInstance(), Duration.ofSeconds(3)).until(ExpectedConditions.alertIsPresent());
+        alert = new Wait().getWait().until(ExpectedConditions.alertIsPresent());
         return alert;
     }
 
@@ -28,6 +27,7 @@ public class Alert1 {
     public void pressAlertOKbutton() {
         //Press the OK button
         alert.accept();
+
     }
 
     public void sendRandomKeysToAlert() {
