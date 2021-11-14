@@ -14,8 +14,8 @@ public class HomePage extends BaseForm{
     private Button_AlertsFrameAndWindows_Alerts_OnButtonClickConfirmBoxAppears button_alertsFrameAndWindows_alerts_onButtonClickConfirmBoxAppears = new Button_AlertsFrameAndWindows_Alerts_OnButtonClickConfirmBoxAppears();
     private Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears alertsFrameAndWindows_alerts_onButtonClickPROMPTboxAppears = new Button_AlertsFrameAndWindows_Alerts_OnButtonClickPROMPTboxAppears();
     private Button_AlertsFrameAndWindows_NestedFrames button_alertsFrameAndWindows_nestedFrames = new Button_AlertsFrameAndWindows_NestedFrames();
-
-
+    private Button_AlertsFrameAndWindows_BrowserWindows button_alertsFrameAndWindows_browserWindows = new Button_AlertsFrameAndWindows_BrowserWindows();
+    private Button_NewTab button_newTab = new Button_NewTab();
 
 
 
@@ -56,5 +56,13 @@ public class HomePage extends BaseForm{
 
     public Button_Elements getButton_elements() {
         return button_elements;
+    }
+
+    public Button_AlertsFrameAndWindows_BrowserWindows getButton_alertsFrameAndWindows_browserWindows() {
+        return button_alertsFrameAndWindows_browserWindows;
+    }
+
+    public Button_NewTab getButton_newTab() {
+        return button_newTab;
     }
 }
