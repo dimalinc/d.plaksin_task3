@@ -1,5 +1,6 @@
 import browser.DriverSingletonClass;
 import browser.Wait;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -53,6 +54,63 @@ public class Test4_Handles {
        // Assert.assertTrue(samplePage.isOpen());
 
         System.out.println(driver.getCurrentUrl());
+
+        driver.close();
+        // ?драйвер сам перейдет на предыдущую вкладку?
+        driver.switchTo().window(originalWindow);
+
+        System.out.println(driver.getCurrentUrl());
+
+        /*JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("document.body.style.zoom = '0.5'");*/
+
+        homePage.getButton_elements_leftPanel().click();
+
+        // ToDo: устранить ElementNot Interactable - может добавить ожидание
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)", "");
+
+        homePage.getButton_elements_links().click();
+
+        System.out.println(driver.getCurrentUrl());
+
+
+
+        ///
+
+
+        originalWindow = driver.getWindowHandle();
+
+//Check we don't have other windows open already
+        assert driver.getWindowHandles().size() == 1;
+
+//Click the link which opens in a new window
+        //   driver.findElement(By.linkText("new window")).click();
+
+        homePage.getHomeLink().click();
+
+//Wait for the new window or tab
+
+        new Wait().getWait().until(numberOfWindowsToBe(2));
+
+//Loop through until we find a new window handle
+        for (String windowHandle : driver.getWindowHandles()) {
+            if(!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+
+        System.out.println(homePage.isOpen());;
+        System.out.println(driver.getCurrentUrl());
+
+        driver.switchTo().window(originalWindow);
+
+        System.out.println(driver.getCurrentUrl());
+
+
+        // ToDo: добавить проверку на открытие https://demoqa.com/links
+
 
     }
 

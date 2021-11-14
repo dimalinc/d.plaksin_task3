@@ -16,7 +16,9 @@ public class HomePage extends BaseForm{
     private Button_AlertsFrameAndWindows_NestedFrames button_alertsFrameAndWindows_nestedFrames = new Button_AlertsFrameAndWindows_NestedFrames();
     private Button_AlertsFrameAndWindows_BrowserWindows button_alertsFrameAndWindows_browserWindows = new Button_AlertsFrameAndWindows_BrowserWindows();
     private Button_NewTab button_newTab = new Button_NewTab();
-
+    private Button_Elements_Links button_elements_links = new Button_Elements_Links();
+    private Button_Elements_LeftPanel button_elements_leftPanel = new Button_Elements_LeftPanel();
+    private HomeLink homeLink = new HomeLink();
 
 
     public HomePage() {
@@ -65,4 +67,17 @@ public class HomePage extends BaseForm{
     public Button_NewTab getButton_newTab() {
         return button_newTab;
     }
+
+    public Button_Elements_Links getButton_elements_links() {
+        return button_elements_links;
+    }
+
+    public Button_Elements_LeftPanel getButton_elements_leftPanel() {
+        return button_elements_leftPanel;
+    }
+
+    public HomeLink getHomeLink() {
+        return homeLink;
+    }
+
 }
