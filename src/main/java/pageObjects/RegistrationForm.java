@@ -2,6 +2,8 @@ package pageObjects;
 
 import elements.*;
 
+import java.util.HashMap;
+
 public class RegistrationForm extends BaseForm{
 
     //div[@id='registration-form-modal']
@@ -21,6 +23,31 @@ public class RegistrationForm extends BaseForm{
     public RegistrationForm() {
     super(uniqueElement);
     }
+
+    public void fillInData(HashMap <String,String> dataSet) {
+
+        getInputFirstName().enterText(dataSet.get("FirstName"));
+        getInputLastName().enterText(dataSet.get("LastName"));
+        getInputEmail().enterText(dataSet.get("Email"));
+        getInputAge().enterText(dataSet.get("Age"));
+        getInputSalary().enterText(dataSet.get("Salary"));
+        getInputDepartment().enterText(dataSet.get("Department"));
+
+        System.out.println(getButton_submit_regForm().getText());
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {e.printStackTrace();}
+
+
+        getButton_submit_regForm().click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {e.printStackTrace();}
+
+    }
+
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }

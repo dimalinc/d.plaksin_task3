@@ -1,3 +1,5 @@
+package dataLoads;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -13,12 +15,12 @@ public class DataReader {
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
 
         //convert json file content to json string
-        String jsonContent = FileUtils.readFileToString(new File("reservationDetails.json"),
+        String jsonContent = FileUtils.readFileToString(new File(jsonFilePath),
                 StandardCharsets.UTF_8);
 
         ObjectMapper mapper = new ObjectMapper();
-        List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
-        });
+        List<HashMap<String, String>> data =
+                mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {});
 
         return data;
 

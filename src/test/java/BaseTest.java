@@ -3,6 +3,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import pageObjects.HomePage;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,12 +14,21 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BaseTest {
+    WebDriver driver;
+    HomePage homePage;
+
+
+
+    @BeforeTest
+    public void setup(){
+        // init driver
+        // naviagete to starting page
+        // new HomePage?
+    }
 
     public WebDriver initializeDriver()
     {
-        System.setProperty("webdriver.chrome.driver","C://chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        return driver;
+        return null;
     }
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
@@ -31,5 +43,10 @@ public class BaseTest {
 
         return data;
 
+    }
+
+    @AfterTest
+    public void tearDown() {
+        // driver quit
     }
 }
