@@ -1,18 +1,22 @@
 import browser.DriverSingletonClass;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pageObjects.Alert1;
 import pageObjects.HomePage;
 
-public class Test1 extends BaseTest{
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
+public class Test1 extends BaseTest {
 
     static final Logger rootLogger = LogManager.getRootLogger();
     static final Logger test1Logger = LogManager.getLogger(Test1.class);
 
-    WebDriver driver = DriverSingletonClass.getInstance();
+    //   WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {
@@ -23,10 +27,29 @@ public class Test1 extends BaseTest{
             test1Logger.debug("UserLogger in debug");
         }*/
 
-        driver.get("https://demoqa.com/");
-        HomePage homePage = new HomePage();
-        System.out.println(homePage.isOpen());;
 
+        driver.get("https://demoqa.com/");
+      /*  JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("document.body.style.zoom = '0.8'");*/
+
+        /*Robot robot;
+        try {
+            robot = new Robot();
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_MINUS);
+
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }*/
+
+        HomePage homePage = new HomePage();
+        System.out.println(homePage.isOpen());
+        ;
+
+        homePage.getButton_close_fixedban().click();
         homePage.getButton_alertsFrameAndWindows().click();
         homePage.getButton_alertsFrameAndWindows_alerts().click();
         homePage.getButton_alertsFrameAndWindows_alerts_clickButtonToSeeAlert().click();

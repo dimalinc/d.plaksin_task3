@@ -1,10 +1,13 @@
 package browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,7 +19,6 @@ public class DriverSingletonClass {
 
     private DriverSingletonClass() {
         driver = driverInit();
-
     }
 
     // TODO вынести в BrowserFactory
@@ -32,6 +34,7 @@ public class DriverSingletonClass {
         String browserName = prop.getProperty("browser");
 
         switch (browserName){
+
             case "chrome":
             {
                 int windowHeight = Integer.parseInt(prop.getProperty("windowHeight"));
@@ -47,6 +50,21 @@ public class DriverSingletonClass {
             }
 
             case "firefox":
+
+                int windowHeight = Integer.parseInt(prop.getProperty("windowHeight"));
+                int windowWidth = Integer.parseInt(prop.getProperty("windowWidth"));
+
+                //Set up driver
+              /*  FirefoxOptions options = new FirefoxOptions();
+                options.addArguments("window-size="+windowHeight+","+windowWidth);
+                options.setCapability("applicationCacheEnabled", false);*/
+               // options.setCapability("marionette", true);
+
+               // WebDriverManager.firefoxdriver().setup();
+               // MarionetteDriverManager.getInstance().setup("0.9.0");
+
+
+                WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
             default:
                 throw new RuntimeException("Incorrect BrowserName");

@@ -10,8 +10,8 @@ import pageObjects.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class Test4_Handles {
-    WebDriver driver = DriverSingletonClass.getInstance();
+public class Test4_Handles extends BaseTest{
+  //  WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {
@@ -20,7 +20,6 @@ public class Test4_Handles {
         HomePage homePage = new HomePage();
         homePage.getButton_alertsFrameAndWindows().click();
         homePage.getButton_alertsFrameAndWindows_browserWindows().click();
-
 
         System.out.println(driver.getCurrentUrl());
 
@@ -74,8 +73,6 @@ public class Test4_Handles {
 
         System.out.println(driver.getCurrentUrl());
 
-
-
         ///
 
 
@@ -108,9 +105,7 @@ public class Test4_Handles {
 
         System.out.println(driver.getCurrentUrl());
 
-
         // ToDo: добавить проверку на открытие https://demoqa.com/links
-
 
     }
 

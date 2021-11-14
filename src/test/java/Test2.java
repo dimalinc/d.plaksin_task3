@@ -8,9 +8,9 @@ import pageObjects.FramesPage;
 import pageObjects.HomePage;
 import pageObjects.NestedFramesPage;
 
-public class Test2 {
+public class Test2 extends BaseTest{
 
-    WebDriver driver = DriverSingletonClass.getInstance();
+  //  WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {

@@ -1,9 +1,14 @@
+import browser.DriverManager;
+import browser.DriverManagerFactory;
+import browser.DriverType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import pageObjects.HomePage;
 
@@ -14,20 +19,17 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BaseTest {
-    WebDriver driver;
+    public WebDriver driver;
+    DriverManager driverManager;
     HomePage homePage;
 
-
-
-    @BeforeTest
-    public void setup(){
-        // init driver
-        // naviagete to starting page
-        // new HomePage?
+    @BeforeMethod
+    public void setUp() {
+        driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
+        driver = driverManager.getDriver();
     }
 
-    public WebDriver initializeDriver()
-    {
+    public WebDriver initializeDriver() {
         return null;
     }
 
@@ -45,8 +47,8 @@ public class BaseTest {
 
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
-        // driver quit
+        driver.quit();
     }
 }

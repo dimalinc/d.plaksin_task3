@@ -19,6 +19,7 @@ public class HomePage extends BaseForm{
     private Button_Elements_Links button_elements_links = new Button_Elements_Links();
     private Button_Elements_LeftPanel button_elements_leftPanel = new Button_Elements_LeftPanel();
     private HomeLink homeLink = new HomeLink();
+    private Button_Close_Fixedban button_close_fixedban = new Button_Close_Fixedban();
 
 
     public HomePage() {
@@ -80,4 +81,7 @@ public class HomePage extends BaseForm{
         return homeLink;
     }
 
+    public Button_Close_Fixedban getButton_close_fixedban() {
+        return button_close_fixedban;
+    }
 }

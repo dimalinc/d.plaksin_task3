@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Test3_Elements extends BaseTest{
-    WebDriver driver = DriverSingletonClass.getInstance();
+   // WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test(dataProvider = "getData")
     public void test(HashMap<String,String> dataSet) {
@@ -42,25 +42,7 @@ public class Test3_Elements extends BaseTest{
 
     @DataProvider
     public Object[][] getData() throws IOException {
-       /* HashMap<String,String> dataSet = new <String,String>HashMap();
-        dataSet.put("FirstName","FirstName");
-        dataSet.put("LastName","LastName");
-        dataSet.put("Email","1@i.ua");
-        dataSet.put("Age","1111");
-        dataSet.put("Salary","330");
-        dataSet.put("Department","Investing");
 
-        HashMap<String,String> dataSet2 = new <String,String>HashMap();
-        dataSet2.put("FirstName","FirstName");
-        dataSet2.put("LastName","LastName");
-        dataSet2.put("Email","2@i.ua");
-        dataSet2.put("Age","2222");
-        dataSet2.put("Salary","330440");
-        dataSet2.put("Department","Sales");
-
-        List<HashMap<String, String>> l = new ArrayList();
-        l.add(dataSet);
-        l.add(dataSet2);*/
         List<HashMap<String, String>> l = new LinkedList<>();
         try {
             // ToDo: check path
