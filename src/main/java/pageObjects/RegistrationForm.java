@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 public class RegistrationForm extends BaseForm{
 
-    //div[@id='registration-form-modal']
-    // ToDo: сделать уникальный элемент
-    private static final BaseElement uniqueElement = new DivFrame();
-    private DivFrame divFrame = new DivFrame();
+    private static final BaseElement uniqueElement = new RegFormTitle();
+    private RegFormTitle regFormTitle = new RegFormTitle();
+
+
 
     private InputDepartment inputDepartment = new InputDepartment();
     private InputAge inputAge = new InputAge();
@@ -33,27 +33,16 @@ public class RegistrationForm extends BaseForm{
         getInputSalary().enterText(dataSet.get("Salary"));
         getInputDepartment().enterText(dataSet.get("Department"));
 
-        System.out.println(getButton_submit_regForm().getText());
-
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {e.printStackTrace();}
-
-
         getButton_submit_regForm().click();
-
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {e.printStackTrace();}
 
     }
 
-    public static BaseElement getUniqueElement() {
+    public  BaseElement getUniqueElement() {
         return uniqueElement;
     }
 
-    public DivFrame getDivFrame() {
-        return divFrame;
+    public RegFormTitle regFormTitle() {
+        return regFormTitle;
     }
 
     public InputDepartment getInputDepartment() {
@@ -86,5 +75,9 @@ public class RegistrationForm extends BaseForm{
 
     public Button_Delete_FromWebTable getButton_delete_fromWebTable() {
         return button_delete_fromWebTable;
+    }
+
+    public RegFormTitle getRegFormTitle() {
+        return regFormTitle;
     }
 }

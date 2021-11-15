@@ -10,7 +10,7 @@ public  class Wait {
    public WebDriverWait getWait() {
       WebDriverWait wait  = null;
       try {
-          wait = new WebDriverWait(DriverSingletonClass.getInstance(), Duration.ofSeconds(3));
+          wait = new WebDriverWait(DriverSingletonClass.getInstance(), Duration.ofSeconds(8));
       } catch (Exception e) {e.printStackTrace();}
 
       return wait;

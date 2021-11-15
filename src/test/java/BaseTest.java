@@ -23,10 +23,12 @@ public class BaseTest {
     DriverManager driverManager;
     HomePage homePage;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp() {
         driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
         driver = driverManager.getDriver();
+        driverManager.openUrl("https://demoqa.com/");
+
     }
 
     public WebDriver initializeDriver() {
@@ -47,7 +49,7 @@ public class BaseTest {
 
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         driver.quit();
     }

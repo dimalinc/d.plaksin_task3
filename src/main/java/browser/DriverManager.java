@@ -26,4 +26,28 @@ public abstract class DriverManager {
         return driver;
     }
 
+    public void openUrl(String url) {
+        driver.get(url);
+    }
+
+    public void firefoxZoom() {
+        /*  JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("document.body.style.zoom = '0.8'");*/
+
+        /*Robot robot;
+        try {
+            robot = new Robot();
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_MINUS);
+
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }*/
+    }
+
+
+
 }

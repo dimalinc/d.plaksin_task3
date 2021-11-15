@@ -1,5 +1,6 @@
-import browser.DriverSingletonClass;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
@@ -10,64 +11,53 @@ import pageObjects.RegistrationForm;
 import pageObjects.WebTablesPage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Test3_Elements extends BaseTest{
-   // WebDriver driver = DriverSingletonClass.getInstance();
+public class Test3_Tables extends BaseTest {
 
     @Test(dataProvider = "getData")
-    public void test(HashMap<String,String> dataSet) {
+    public void test(HashMap<String, String> dataSet) {
 
-        // TODO: переписать на homePage.goTo
-        driver.get("https://demoqa.com/");
+        driverManager.openUrl("https://demoqa.com/");
         HomePage homePage = new HomePage();
+        Assert.assertTrue(homePage.isOpen());
         homePage.getButton_elements().click();
         ElementsPage elementsPage = new ElementsPage();
+        Assert.assertTrue(elementsPage.isOpen());
         elementsPage.getButton_elements_webTables().click();
         WebTablesPage webTablesPage = new WebTablesPage();
-        System.out.println(webTablesPage.getButton_elements_webTables_addRecord().getText());
+        Assert.assertTrue(webTablesPage.isOpen());
+
         webTablesPage.getButton_elements_webTables_addRecord().click();
 
-       RegistrationForm registrationForm = new RegistrationForm();
-
+        RegistrationForm registrationForm = new RegistrationForm();
+        Assert.assertTrue(registrationForm.regFormTitle().getElementName().contains(registrationForm.getUniqueElement().getText()) );
         registrationForm.fillInData(dataSet);
 
-        System.out.println("Delete bin clicked");
+
         registrationForm.getButton_delete_fromWebTable().click();
-        System.out.println(driver.getCurrentUrl());
+        trashBinsList = driverManager.getDriver().findElements(By.xpath("//*[contains(@id,'delete-record')]"));
+        int trashBinsListSize2 = trashBinsList.size();
+
+        Assert.assertTrue(trashBinsListSize2<trashBinsListSize1);
     }
 
     @DataProvider
-    public Object[][] getData() throws IOException {
+    public Object[][] getData() {
 
         List<HashMap<String, String>> l = new LinkedList<>();
         try {
             // ToDo: check path
             l = getJsonData("src\\main\\java\\dataLoads\\registrationDetails.json");
-        } catch (IOException e) {e.printStackTrace();}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        return new  Object[][]
+        return new Object[][]
                 {
                         {l.get(0)}, {l.get(1)}
                 };
-    }
-
-    @AfterTest
-    public void tearDown() {
-
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {e.printStackTrace();}
-
-     //  driver.quit();
-    }
-
-    @AfterSuite
-    public void shutDown() {
-
-         driver.quit();
     }
 }

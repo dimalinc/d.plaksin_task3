@@ -2,15 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="123">
 
-    <test name="Test1">
+    <test name="Test1_Alerts">
         <classes>
-            <class name="Test1"/>
+            <class name="Test1_Alerts"/>
         </classes>
     </test>
 
-    <test name="Test3_Elements">
+    <test name="Test3_Tables">
         <classes>
-            <class name="Test3_Elements"/>
+            <class name="Test3_Tables"/>
         </classes>
     </test>
 

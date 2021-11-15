@@ -1,24 +1,25 @@
 package pageObjects;
 
 import elements.*;
+import org.openqa.selenium.By;
 
-public class WebTablesPage extends BaseForm{
+public class LinksPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrameWebTables();
-    private DivFrameWebTables divFrameWebTables = new DivFrameWebTables();
+    private static final BaseElement uniqueElement = new DivFrameLinks();
+    private DivFrameLinks divFrame = new DivFrameLinks();
     private Button_Elements_WebTables button_elements_webTables = new Button_Elements_WebTables();
     private Button_Elements_WebTables_AddRecord button_elements_webTables_addRecord = new Button_Elements_WebTables_AddRecord();
 
-    public WebTablesPage() {
+    public LinksPage() {
     super(uniqueElement);
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
 
-    public DivFrameWebTables getDivFrameWebTables() {
-        return divFrameWebTables;
-    }
+
+
+
 
     public Button_Elements_WebTables getButton_elements_webTables() {
         return button_elements_webTables;

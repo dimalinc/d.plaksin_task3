@@ -1,14 +1,11 @@
 package pageObjects;
 
-import elements.BaseElement;
-import elements.Button_Elements_WebTables;
-import elements.Button_Elements_WebTables_AddRecord;
-import elements.DivFrame;
+import elements.*;
 
 public class ElementsPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrame();
-    private DivFrame divFrame = new DivFrame();
+    private static final BaseElement uniqueElement = new DivFrameElements();
+    private DivFrameElements divFrameElements = new DivFrameElements();
     private Button_Elements_WebTables button_elements_webTables = new Button_Elements_WebTables();
     private Button_Elements_WebTables_AddRecord button_elements_webTables_addRecord = new Button_Elements_WebTables_AddRecord();
 
@@ -19,8 +16,8 @@ public class ElementsPage extends BaseForm{
         return uniqueElement;
     }
 
-    public DivFrame getDivFrame() {
-        return divFrame;
+    public DivFrameElements getDivFrameElements() {
+        return divFrameElements;
     }
 
     public Button_Elements_WebTables getButton_elements_webTables() {
@@ -30,4 +27,5 @@ public class ElementsPage extends BaseForm{
     public Button_Elements_WebTables_AddRecord getButton_elements_webTables_addRecord() {
         return button_elements_webTables_addRecord;
     }
+
 }

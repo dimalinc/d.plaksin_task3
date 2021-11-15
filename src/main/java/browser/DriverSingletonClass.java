@@ -51,18 +51,6 @@ public class DriverSingletonClass {
 
             case "firefox":
 
-                int windowHeight = Integer.parseInt(prop.getProperty("windowHeight"));
-                int windowWidth = Integer.parseInt(prop.getProperty("windowWidth"));
-
-                //Set up driver
-              /*  FirefoxOptions options = new FirefoxOptions();
-                options.addArguments("window-size="+windowHeight+","+windowWidth);
-                options.setCapability("applicationCacheEnabled", false);*/
-               // options.setCapability("marionette", true);
-
-               // WebDriverManager.firefoxdriver().setup();
-               // MarionetteDriverManager.getInstance().setup("0.9.0");
-
 
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
