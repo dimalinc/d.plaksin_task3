@@ -21,12 +21,9 @@ public class BrowserFactory {
     }
 
 
-    public WebDriver initializeDriver()  {
-
-        driver = DriverSingletonClass.getInstance(); /*new ChromeDriver(options)*/;
-
+    public static WebDriver initializeDriver()  {
+        driver = DriverSingletonClass.getInstance();
         return driver;
-
 
     }
 

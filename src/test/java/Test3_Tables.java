@@ -1,4 +1,6 @@
+import browser.DriverSingletonClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -41,7 +43,6 @@ public class Test3_Tables extends BaseTest {
 
         Assert.assertTrue(webTablesPage.tableContainsDataProvided(dataSet),"Table not contains data provided");
         System.out.println(webTablesPage.getReactTable().getText());
-
 
         trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.getButton_delete_fromWebTable().click();

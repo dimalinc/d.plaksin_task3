@@ -51,7 +51,6 @@ public class DriverSingletonClass {
 
             case "firefox":
 
-
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
             default:

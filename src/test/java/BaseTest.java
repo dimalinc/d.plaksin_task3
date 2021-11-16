@@ -1,3 +1,4 @@
+import browser.BrowserFactory;
 import browser.DriverManager;
 import browser.DriverManagerFactory;
 import browser.DriverType;
@@ -6,10 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pageObjects.HomePage;
 
 import java.io.File;
@@ -21,18 +19,15 @@ import java.util.List;
 public class BaseTest {
     public WebDriver driver;
     DriverManager driverManager;
-    HomePage homePage;
 
-    @BeforeTest
+
+
+
+    @BeforeClass
     public void setUp() {
-        driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
+        driverManager = new DriverManagerFactory().getManager(DriverType.FIREFOX);
         driver = driverManager.getDriver();
         driverManager.openUrl("https://demoqa.com/");
-
-    }
-
-    public WebDriver initializeDriver() {
-        return null;
     }
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
@@ -49,8 +44,8 @@ public class BaseTest {
 
     }
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() {
-        driver.quit();
+        driverManager.quitDriver();
     }
 }

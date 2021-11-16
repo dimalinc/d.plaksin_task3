@@ -1,14 +1,11 @@
 package browser;
 
 import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
-
 public abstract class DriverManager {
 
     WebDriver driver;
 
-    abstract void startService() throws IOException;
+    abstract void startService() ;
 
     abstract void stopService();
 
@@ -21,7 +18,7 @@ public abstract class DriverManager {
     public WebDriver getDriver() {
         if (driver==null) {
          //   startService();
-            createDriver();
+            driver = DriverSingletonClass.getInstance();
         }
         return driver;
     }

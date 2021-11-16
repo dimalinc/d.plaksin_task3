@@ -8,9 +8,21 @@
         </classes>
     </test>
 
+    <test name="Test2_Iframe">
+        <classes>
+            <class name="Test2_Iframe"/>
+        </classes>
+    </test>
+
     <test name="Test3_Tables">
         <classes>
             <class name="Test3_Tables"/>
+        </classes>
+    </test>
+
+    <test name="Test4_Handles">
+        <classes>
+            <class name="Test4_Handles"/>
         </classes>
     </test>
 

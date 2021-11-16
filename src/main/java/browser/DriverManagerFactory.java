@@ -2,7 +2,7 @@ package browser;
 
 public class DriverManagerFactory {
 
-    public static  DriverManager getManager(DriverType type) {
+    public   DriverManager getManager(DriverType type) {
 
         DriverManager driverManager;
 

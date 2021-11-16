@@ -18,7 +18,7 @@ public class FirefoxDriverManager extends DriverManager {
 
 
     @Override
-    void startService() throws IOException {
+    void startService()  {
         if (firefoxService == null) {
             firefoxService = new FirefoxDriverService.Builder() {
                 @Override

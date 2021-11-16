@@ -3,6 +3,8 @@ import browser.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -12,7 +14,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class Test4_Handles extends BaseTest{
-  //  WebDriver driver = DriverSingletonClass.getInstance();
+    WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {
@@ -62,7 +64,6 @@ public class Test4_Handles extends BaseTest{
         homePage.getButton_close_fixedban().click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)", "");
-
         homePage.getButton_elements_links().click();
         Assert.assertTrue(linksPage.isOpen());
 
@@ -71,6 +72,10 @@ public class Test4_Handles extends BaseTest{
 //Check we don't have other windows open already
         assert driver.getWindowHandles().size() == 1;
 
+        Actions actions = new Actions(driver);
+        WebElement homeLink = driver.findElement(homePage.getHomeLink().getLocator());
+        actions.moveToElement(homeLink).perform();
+        actions.click();
         homePage.getHomeLink().click();
         new Wait().getWait().until(numberOfWindowsToBe(2));
 
