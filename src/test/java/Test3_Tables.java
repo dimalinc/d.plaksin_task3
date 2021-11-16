@@ -34,14 +34,19 @@ public class Test3_Tables extends BaseTest {
 
         RegistrationForm registrationForm = new RegistrationForm();
         Assert.assertTrue(registrationForm.regFormTitle().getElementName().contains(registrationForm.getUniqueElement().getText()) );
+        List<WebElement> trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.fillInData(dataSet);
+        List<WebElement> trashBinsList2 = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        Assert.assertTrue(!registrationForm.checkTableSizeDecreasedAfterDelete(trashBinsList,trashBinsList2),"trash bins qty decreased");
+
+        Assert.assertTrue(webTablesPage.tableContainsDataProvided(dataSet),"Table not contains data provided");
+        System.out.println(webTablesPage.getReactTable().getText());
 
 
+        trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.getButton_delete_fromWebTable().click();
-        trashBinsList = driverManager.getDriver().findElements(By.xpath("//*[contains(@id,'delete-record')]"));
-        int trashBinsListSize2 = trashBinsList.size();
-
-        Assert.assertTrue(trashBinsListSize2<trashBinsListSize1);
+        trashBinsList2 = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        Assert.assertTrue(registrationForm.checkTableSizeDecreasedAfterDelete(trashBinsList,trashBinsList2),"trash bins qty not decreased");
     }
 
     @DataProvider

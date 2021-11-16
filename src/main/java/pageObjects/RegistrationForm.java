@@ -1,14 +1,16 @@
 package pageObjects;
 
 import elements.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.HashMap;
+import java.util.List;
 
-public class RegistrationForm extends BaseForm{
+public class RegistrationForm extends BaseForm {
 
     private static final BaseElement uniqueElement = new RegFormTitle();
     private RegFormTitle regFormTitle = new RegFormTitle();
-
 
 
     private InputDepartment inputDepartment = new InputDepartment();
@@ -19,12 +21,28 @@ public class RegistrationForm extends BaseForm{
     private InputSalary inputSalary = new InputSalary();
     private Button_Submit_RegForm button_submit_regForm = new Button_Submit_RegForm();
     private Button_Delete_FromWebTable button_delete_fromWebTable = new Button_Delete_FromWebTable();
+    private TrashBinForListGeneralXpath trashBinForListGeneralXpath = new TrashBinForListGeneralXpath();
 
-    public RegistrationForm() {
-    super(uniqueElement);
+
+
+    public boolean checkTableSizeDecreasedAfterDelete(List<WebElement> trashBinsList, List<WebElement> trashBinsList2) {
+        int initial = trashBinsList.size();
+        trashBinsList.removeIf(trashBinsList2::contains);
+        if ((initial - trashBinsList2.size()) > 0)
+            return true;
+        else return false;
     }
 
-    public void fillInData(HashMap <String,String> dataSet) {
+
+    public TrashBinForListGeneralXpath getTrashBinForListGeneralXpath() {
+        return trashBinForListGeneralXpath;
+    }
+
+    public RegistrationForm() {
+        super(uniqueElement);
+    }
+
+    public void fillInData(HashMap<String, String> dataSet) {
 
         getInputFirstName().enterText(dataSet.get("FirstName"));
         getInputLastName().enterText(dataSet.get("LastName"));
@@ -37,7 +55,7 @@ public class RegistrationForm extends BaseForm{
 
     }
 
-    public  BaseElement getUniqueElement() {
+    public BaseElement getUniqueElement() {
         return uniqueElement;
     }
 
