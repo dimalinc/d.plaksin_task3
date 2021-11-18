@@ -30,10 +30,6 @@ public abstract class BaseElement {
         return DriverSingletonClass.getInstance().findElement(locator);
     }
 
-    List<WebElement> findElements() {
-        return DriverSingletonClass.getInstance().findElements(locator);
-    }
-
     public void click() {
         findElement().click();
     }

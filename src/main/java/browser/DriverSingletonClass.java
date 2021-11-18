@@ -15,13 +15,12 @@ import java.util.Properties;
 
 public class DriverSingletonClass {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
     private DriverSingletonClass() {
         driver = driverInit();
     }
 
-    // TODO вынести в BrowserFactory
     private WebDriver driverInit()  {
         Properties prop;
         prop = new Properties();
@@ -42,6 +41,7 @@ public class DriverSingletonClass {
 
                 //Set up driver
                 ChromeOptions options = new ChromeOptions();
+                // ToDo: можно было использовать здесь String.format()
                 options.addArguments("window-size="+windowHeight+","+windowWidth);
                 options.setCapability("applicationCacheEnabled", false);
                 WebDriverManager.chromedriver().setup();
