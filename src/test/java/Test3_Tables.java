@@ -42,7 +42,6 @@ public class Test3_Tables extends BaseTest {
         Assert.assertTrue(!registrationForm.checkTableSizeDecreasedAfterDelete(trashBinsList,trashBinsList2),"trash bins qty decreased");
 
         Assert.assertTrue(webTablesPage.tableContainsDataProvided(dataSet),"Table not contains data provided");
-        System.out.println(webTablesPage.getReactTable().getText());
 
         trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.getButton_delete_fromWebTable().click();

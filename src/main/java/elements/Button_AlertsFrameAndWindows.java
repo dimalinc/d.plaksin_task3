@@ -7,7 +7,7 @@ public class Button_AlertsFrameAndWindows extends BaseElement{
     private String elementName = "Alerts, Frame & Windows";
 
     public Button_AlertsFrameAndWindows() {
-        super();
+        super(locator,elementName);
         super.setLocator(locator);
         super.setElementName(elementName);
     }

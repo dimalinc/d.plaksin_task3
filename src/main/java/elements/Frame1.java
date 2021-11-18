@@ -19,5 +19,4 @@ public class Frame1 extends BaseElement{
         return textInFrame;
     }
 
-
 }

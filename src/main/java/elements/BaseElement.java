@@ -4,14 +4,14 @@ import browser.DriverSingletonClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 public abstract class BaseElement {
 
     private By locator;
     private String elementName;
 
-    public BaseElement() {
+    public BaseElement(By locator, String elementName) {
+        this.locator = locator;
+        this.elementName = elementName;
     }
 
     public void setElementName(String elementName) {
