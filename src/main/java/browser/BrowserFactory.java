@@ -6,8 +6,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.Properties;
 
 public class BrowserFactory {
-    public static WebDriver driver;
-    public Properties prop;
+    private static WebDriver driver;
+    private Properties prop;
 
     public WebDriver getWebDriver(String browserName){
         switch (browserName){

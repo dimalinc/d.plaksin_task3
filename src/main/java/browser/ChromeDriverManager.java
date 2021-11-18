@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class ChromeDriverManager extends DriverManager{
 
-    ChromeDriverService chromeService;
+   private ChromeDriverService chromeService;
 
 
     @Override
