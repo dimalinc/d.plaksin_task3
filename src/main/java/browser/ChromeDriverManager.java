@@ -7,7 +7,7 @@ public class ChromeDriverManager extends DriverManager{
    private ChromeDriverService chromeService;
 
 
-    @Override
+/*    @Override
     void startService() {
         if (chromeService==null) {
             chromeService = new ChromeDriverService.Builder().build();
@@ -24,5 +24,5 @@ public class ChromeDriverManager extends DriverManager{
     @Override
     void createDriver() {
         driver = DriverSingletonClass.getInstance();
-    }
+    }*/
 }

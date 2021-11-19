@@ -55,7 +55,7 @@ public class Test3_Tables extends BaseTest {
         List<HashMap<String, String>> l = new LinkedList<>();
         try {
             // ToDo: check path
-            l = getJsonData("src\\main\\java\\dataLoads\\registrationDetails.json");
+            l = getJsonData("src\\main\\resources\\registrationDetails.json");
         } catch (IOException e) {
             e.printStackTrace();
         }

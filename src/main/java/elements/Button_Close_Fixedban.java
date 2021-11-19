@@ -2,13 +2,10 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class Button_Close_Fixedban extends BaseElement{
-    private By locator = By.xpath("//*[@id=\"close-fixedban\"]/img");
-    private String elementName = "Close lower banner";
+public class Button_Close_Fixedban extends BaseElement {
 
     public Button_Close_Fixedban() {
-        super();
-        super.setLocator(locator);
-        super.setElementName(elementName);
+        super(By.xpath("//*[@id=\"close-fixedban\"]/img"),
+                "Close lower banner");
     }
 }

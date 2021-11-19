@@ -6,20 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public abstract class BaseElement {
 
-    private By locator;
-    private String elementName;
+    protected By locator;
+    protected String elementName;
 
     public BaseElement(By locator, String elementName) {
         this.locator = locator;
         this.elementName = elementName;
-    }
-
-    public void setElementName(String elementName) {
-        this.elementName = elementName;
-    }
-
-    public void setLocator(By locator) {
-        this.locator = locator;
     }
 
     public By getLocator() {
@@ -44,5 +36,13 @@ public abstract class BaseElement {
 
     public void enterText(String text) {
         findElement().sendKeys(text);
+    }
+
+    public void setElementName(String elementName) {
+        this.elementName = elementName;
+    }
+
+    public void setLocator(By locator) {
+        this.locator = locator;
     }
 }

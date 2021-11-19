@@ -4,12 +4,11 @@ import org.openqa.selenium.By;
 
 public class Frame2 extends BaseElement{
 
-    private By locator = By.xpath("//iframe[@id='frame2']");
-    private String elementName = "Frame2 on Frames page";
     private TextInFrame textInFrame = new TextInFrame();
 
     public Frame2() {
-        super();
+        super(By.xpath("//iframe[@id='frame2']"),
+                "Frame2 on Frames page");
         super.setLocator(locator);
         super.setElementName(elementName);
     }

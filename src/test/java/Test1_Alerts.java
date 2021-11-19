@@ -21,7 +21,6 @@ public class Test1_Alerts extends BaseTest {
         }
 
         driverManager.openUrl("https://demoqa.com/");
-        driverManager.firefoxZoom();
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isOpen());
 

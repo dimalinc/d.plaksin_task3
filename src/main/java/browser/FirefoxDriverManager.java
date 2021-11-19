@@ -17,7 +17,7 @@ public class FirefoxDriverManager extends DriverManager {
     DriverService firefoxService;
 
 
-    @Override
+   /* @Override
     void startService()  {
         if (firefoxService == null) {
             firefoxService = new FirefoxDriverService.Builder() {
@@ -64,5 +64,5 @@ public class FirefoxDriverManager extends DriverManager {
     @Override
     void createDriver() {
         driver = DriverSingletonClass.getInstance();
-    }
+    }*/
 }
