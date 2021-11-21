@@ -23,6 +23,10 @@ public class DriverSingletonClass {
         return  driver;
     }
 
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public static void setInstance(DriverSingletonClass instance) {
         DriverSingletonClass.instance = instance;
     }
@@ -30,6 +34,8 @@ public class DriverSingletonClass {
     private DriverSingletonClass() {
         driver = driverInit();
     }
+
+
 
     public static DriverSingletonClass getInstance() {
         if (instance == null) {
@@ -64,10 +70,6 @@ public class DriverSingletonClass {
                 options.setCapability("applicationCacheEnabled", false);
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver(options);
-
-               /* ChromeOptions chromeOptions = new ChromeOptions();
-                WebDriverManager.chromedriver().setup();
-                WebDriver driver = new ChromeDriver(chromeOptions);*/
             }
 
             case "firefox":
@@ -77,7 +79,6 @@ public class DriverSingletonClass {
             default:
                 throw new RuntimeException("Incorrect BrowserName");
         }
-
     }
 
     public void openUrl(String url) {

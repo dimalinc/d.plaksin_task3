@@ -9,8 +9,6 @@ public class Frame2 extends BaseElement{
     public Frame2() {
         super(By.xpath("//iframe[@id='frame2']"),
                 "Frame2 on Frames page");
-        super.setLocator(locator);
-        super.setElementName(elementName);
     }
 
     public TextInFrame getTextInFrame() {

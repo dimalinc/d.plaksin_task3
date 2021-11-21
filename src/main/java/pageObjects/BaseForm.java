@@ -1,5 +1,6 @@
 package pageObjects;
 
+import browser.BrowserFactory;
 import browser.DriverSingletonClass;
 import elements.BaseElement;
 
@@ -15,7 +16,7 @@ public abstract class BaseForm {
     public boolean isOpen() {
         // Todo - написать проверку загрузился ли
         // return uniqueElement.exists();
-        return DriverSingletonClass.getInstance().getDriver().findElements
+        return BrowserFactory.getDriver().findElements
                 (uniqueElement.getLocator()).size() > 0 ;
     }
 }

@@ -1,5 +1,6 @@
 package elements;
 
+import browser.BrowserFactory;
 import browser.DriverSingletonClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,7 @@ public abstract class BaseElement {
     }
 
     protected WebElement findElement() {
-        return DriverSingletonClass.getInstance().getDriver().findElement(locator);
+        return BrowserFactory.getDriver().findElement(locator);
     }
 
     public void click() {

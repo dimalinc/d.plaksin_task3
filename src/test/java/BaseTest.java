@@ -7,11 +7,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import pageObjects.HomePage;
 
+import static browser.BrowserFactory.setWebDriverNull;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
+
 
 public class BaseTest {
     public WebDriver driver;
@@ -22,14 +25,15 @@ public class BaseTest {
     public void setUp() {
         //  driverManager = new DriverManagerFactory().getManager(DriverType.FIREFOX);
         // ToDo: переделать на Factory
-        driver = DriverSingletonClass.getInstance().getDriver();
+
+        driver = BrowserFactory.getDriver();
+        //  driver = DriverSingletonClass.getInstance().getDriver();
        /* if(driver == null){
             //initialize your driver
-            driver = DriverSingletonClass.getInstance().getDriver();
+                    driver = BrowserFactory.initializeDriver();
         }*/
-        // driver.get("https://demoqa.com/");
+
         driver.get("https://demoqa.com/");
-        //  driverManager.openUrl("https://demoqa.com/");
     }
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
@@ -49,10 +53,10 @@ public class BaseTest {
     @AfterTest
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+            BrowserFactory.driverQuit();
         }
-
-        DriverSingletonClass.setInstance(null);
+        setWebDriverNull();
+        // DriverSingletonClass.setInstance(null);
     }
 
 }

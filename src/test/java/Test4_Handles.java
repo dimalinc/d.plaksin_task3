@@ -35,12 +35,8 @@ public class Test4_Handles extends BaseTest{
 //Check we don't have other windows open already
         assert driver.getWindowHandles().size() == 1;
 
-//Click the link which opens in a new window
-     //   driver.findElement(By.linkText("new window")).click();
+
         homePage.getButton_newTab().click();
-
-//Wait for the new window or tab
-
         new Wait().getWait().until(numberOfWindowsToBe(2));
 
 //Loop through until we find a new window handle
@@ -51,11 +47,7 @@ public class Test4_Handles extends BaseTest{
             }
         }
 
-//Wait for the new tab to finish loading content
-     //   new Wait().getWait().until(titleIs(""));
-
         SamplePage samplePage = new SamplePage();
-        System.out.println(samplePage.getSampleHeading().getText());;
         Assert.assertTrue(samplePage.isOpen());
         driver.close();
 
