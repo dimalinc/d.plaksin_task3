@@ -18,7 +18,6 @@ import java.util.List;
 
 public class BaseTest {
     public WebDriver driver;
-    DriverManager driverManager;
 
 
     @BeforeMethod

@@ -12,7 +12,6 @@ import java.util.Properties;
 
 public class BrowserFactory {
     private static WebDriver driver;
-    private Properties prop;
 
     public static WebDriver getDriver() {
         if (driver == null)
