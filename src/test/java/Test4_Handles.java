@@ -14,12 +14,15 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class Test4_Handles extends BaseTest{
-    WebDriver driver = DriverSingletonClass.getInstance();
+
+  //  WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {
 
-        driverManager.openUrl("https://demoqa.com/");
+        // Todo - driverFactory
+      //  driverManager.openUrl("https://demoqa.com/");
+        driver.get("https://demoqa.com/");
         HomePage homePage = new HomePage();
         LinksPage linksPage = new LinksPage();
         Assert.assertTrue(homePage.isOpen());

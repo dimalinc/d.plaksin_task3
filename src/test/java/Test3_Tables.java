@@ -22,7 +22,8 @@ public class Test3_Tables extends BaseTest {
     @Test(dataProvider = "getData")
     public void test(HashMap<String, String> dataSet) {
 
-        driverManager.openUrl("https://demoqa.com/");
+        // Todo - driverFactory
+        //  driverManager.openUrl("https://demoqa.com/");
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isOpen());
         homePage.getButton_elements().click();
@@ -36,16 +37,16 @@ public class Test3_Tables extends BaseTest {
 
         RegistrationForm registrationForm = new RegistrationForm();
         Assert.assertTrue(registrationForm.regFormTitle().getElementName().contains(registrationForm.getUniqueElement().getText()) );
-        List<WebElement> trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        List<WebElement> trashBinsList = driver.findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.fillInData(dataSet);
-        List<WebElement> trashBinsList2 = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        List<WebElement> trashBinsList2 = driver.findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         Assert.assertTrue(!registrationForm.checkTableSizeDecreasedAfterDelete(trashBinsList,trashBinsList2),"trash bins qty decreased");
 
         Assert.assertTrue(webTablesPage.tableContainsDataProvided(dataSet),"Table not contains data provided");
 
-        trashBinsList = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        trashBinsList = driver.findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         registrationForm.getButton_delete_fromWebTable().click();
-        trashBinsList2 = driverManager.getDriver().findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
+        trashBinsList2 = driver.findElements(registrationForm.getTrashBinForListGeneralXpath().getLocator());
         Assert.assertTrue(registrationForm.checkTableSizeDecreasedAfterDelete(trashBinsList,trashBinsList2),"trash bins qty not decreased");
     }
 

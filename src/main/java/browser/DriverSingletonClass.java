@@ -15,38 +15,59 @@ import java.util.Properties;
 
 public class DriverSingletonClass {
 
-    private static WebDriver driver;
+    private static DriverSingletonClass instance;
+
+    private  WebDriver driver;
+
+    public WebDriver getDriver() {
+        return  driver;
+    }
+
+    public static void setInstance(DriverSingletonClass instance) {
+        DriverSingletonClass.instance = instance;
+    }
 
     private DriverSingletonClass() {
         driver = driverInit();
     }
 
-    private WebDriver driverInit()  {
+    public static DriverSingletonClass getInstance() {
+        if (instance == null) {
+           instance = new DriverSingletonClass();
+        }
+        return instance;
+    }
+
+    private WebDriver driverInit() {
         Properties prop;
         prop = new Properties();
         try {
             FileInputStream fis =
                     new FileInputStream(".\\src\\main\\java\\utils\\params.properties");
             prop.load(fis);
-        } catch (IOException e) {e.printStackTrace();}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         String browserName = prop.getProperty("browser");
 
-        switch (browserName){
+        switch (browserName) {
 
-            case "chrome":
-            {
+            case "chrome": {
                 int windowHeight = Integer.parseInt(prop.getProperty("windowHeight"));
                 int windowWidth = Integer.parseInt(prop.getProperty("windowWidth"));
 
                 //Set up driver
                 ChromeOptions options = new ChromeOptions();
                 // ToDo: можно было использовать здесь String.format()
-                options.addArguments("window-size="+windowHeight+","+windowWidth);
+                options.addArguments("window-size=" + windowHeight + "," + windowWidth);
                 options.setCapability("applicationCacheEnabled", false);
                 WebDriverManager.chromedriver().setup();
-
                 return new ChromeDriver(options);
+
+               /* ChromeOptions chromeOptions = new ChromeOptions();
+                WebDriverManager.chromedriver().setup();
+                WebDriver driver = new ChromeDriver(chromeOptions);*/
             }
 
             case "firefox":
@@ -56,13 +77,26 @@ public class DriverSingletonClass {
             default:
                 throw new RuntimeException("Incorrect BrowserName");
         }
+
     }
 
-    public static WebDriver getInstance() {
-        if (driver == null) {
-            new DriverSingletonClass();
-        }
-        return driver;
+    public void openUrl(String url) {
+        driver.get(url);
     }
+
+    public void quitDriver() {
+//   log
+        driver.quit();
+    }
+
+
+    public String getUrl() {
+        return driver.getCurrentUrl();
+    }
+
+    public void switchToDefaultContent() {
+        driver.switchTo().defaultContent();
+    }
+
 
 }

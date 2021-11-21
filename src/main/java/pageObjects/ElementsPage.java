@@ -2,7 +2,7 @@ package pageObjects;
 
 import elements.*;
 
-public class ElementsPage extends BaseForm{
+public class ElementsPage extends BaseForm {
 
     private static final BaseElement uniqueElement = new DivFrameElements();
     private DivFrameElements divFrameElements = new DivFrameElements();
@@ -10,8 +10,9 @@ public class ElementsPage extends BaseForm{
     private Button_Elements_WebTables_AddRecord button_elements_webTables_addRecord = new Button_Elements_WebTables_AddRecord();
 
     public ElementsPage() {
-    super(uniqueElement);
+        super(uniqueElement);
     }
+
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }

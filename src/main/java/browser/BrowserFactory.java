@@ -22,7 +22,7 @@ public class BrowserFactory {
 
 
     public static WebDriver initializeDriver()  {
-        driver = DriverSingletonClass.getInstance();
+     //  driver = DriverSingletonClass.getInstance();
         return driver;
 
     }

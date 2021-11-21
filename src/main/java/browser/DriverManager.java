@@ -10,17 +10,17 @@ public abstract class DriverManager {
     }
 
     public WebDriver getDriver() {
-        if (driver==null) {
+
+        // Todo: переделать на driver factory
+        /*if (driver==null) {
             driver = DriverSingletonClass.getInstance();
-        }
+        }*/
         return driver;
     }
 
-    public void openUrl(String url) {
+   /* public void openUrl(String url) {
         driver.get(url);
-    }
-
-
+    }*/
 
 
 }

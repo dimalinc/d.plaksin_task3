@@ -19,7 +19,7 @@ public abstract class BaseElement {
     }
 
     protected WebElement findElement() {
-        return DriverSingletonClass.getInstance().findElement(locator);
+        return DriverSingletonClass.getInstance().getDriver().findElement(locator);
     }
 
     public void click() {

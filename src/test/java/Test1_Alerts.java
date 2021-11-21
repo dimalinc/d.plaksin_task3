@@ -20,7 +20,9 @@ public class Test1_Alerts extends BaseTest {
             test1Logger.debug("UserLogger in debug");
         }
 
-        driverManager.openUrl("https://demoqa.com/");
+        // Todo - driverFactory
+        //  driverManager.openUrl("https://demoqa.com/");
+     //   driver.get("https://demoqa.com/");
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isOpen());
 

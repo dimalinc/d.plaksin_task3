@@ -1,7 +1,4 @@
-import browser.BrowserFactory;
-import browser.DriverManager;
-import browser.DriverManagerFactory;
-import browser.DriverType;
+import browser.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -21,13 +18,18 @@ public class BaseTest {
     DriverManager driverManager;
 
 
-
-
-    @BeforeClass
+    @BeforeMethod
     public void setUp() {
-        driverManager = new DriverManagerFactory().getManager(DriverType.FIREFOX);
-        driver = driverManager.getDriver();
-        driverManager.openUrl("https://demoqa.com/");
+        //  driverManager = new DriverManagerFactory().getManager(DriverType.FIREFOX);
+        // ToDo: переделать на Factory
+        driver = DriverSingletonClass.getInstance().getDriver();
+       /* if(driver == null){
+            //initialize your driver
+            driver = DriverSingletonClass.getInstance().getDriver();
+        }*/
+        // driver.get("https://demoqa.com/");
+        driver.get("https://demoqa.com/");
+        //  driverManager.openUrl("https://demoqa.com/");
     }
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
@@ -44,8 +46,13 @@ public class BaseTest {
 
     }
 
-    @AfterSuite
+    @AfterTest
     public void tearDown() {
-        driverManager.quitDriver();
+        if (driver != null) {
+            driver.quit();
+        }
+
+        DriverSingletonClass.setInstance(null);
     }
+
 }
