@@ -20,8 +20,7 @@ public class Test4_Handles extends BaseTest{
     @Test
     public void test() {
 
-        // Todo - driverFactory
-      //  driverManager.openUrl("https://demoqa.com/");
+
         driver.get("https://demoqa.com/");
         HomePage homePage = new HomePage();
         LinksPage linksPage = new LinksPage();
