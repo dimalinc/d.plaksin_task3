@@ -26,9 +26,6 @@ public class DatePickerPage extends BaseForm{
     public LabelTextMonthYear getLabelTextMonthYear() {
         return labelTextMonthYear;
     }
-    public DivFrameDatePicker getDivFrameDatePicker() {
-        return divFrameDatePicker;
-    }
     public DatepickerDay29actualMonth getDatepickerDay29actualMonth() {
         return datepickerDay29actualMonth;
     }

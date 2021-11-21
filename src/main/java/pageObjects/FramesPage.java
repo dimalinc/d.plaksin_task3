@@ -16,7 +16,6 @@ public class FramesPage extends BaseForm{
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-
     public DivFrames getDivFrames() {
         return divFrames;
     }
