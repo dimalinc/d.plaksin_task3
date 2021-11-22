@@ -15,6 +15,10 @@ public abstract class BaseElement {
         this.elementName = elementName;
     }
 
+    public String getValue() {
+        return BrowserFactory.getDriver().findElement(locator).getAttribute("value");
+    }
+
     public By getLocator() {
         return locator;
     }

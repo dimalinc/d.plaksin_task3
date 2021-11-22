@@ -7,6 +7,7 @@ public class DatePickerPage extends BaseForm{
     private static final BaseElement uniqueElement = new DivFrameDatePicker();
     private DivFrameDatePicker divFrameDatePicker = new DivFrameDatePicker();
     private InputDate inputDate = new InputDate();
+    private InputDateAndTime inputDateAndTime = new InputDateAndTime();
     private LabelTextMonthYear labelTextMonthYear = new LabelTextMonthYear();
     private Button_NextMonth button_nextMonth = new Button_NextMonth();
     private DatepickerDay29actualMonth datepickerDay29actualMonth = new DatepickerDay29actualMonth();
@@ -31,6 +32,9 @@ public class DatePickerPage extends BaseForm{
     }
     public Button_NextMonth getButton_nextMonth() {
         return button_nextMonth;
+    }
+    public InputDateAndTime getInputDateAndTime() {
+        return inputDateAndTime;
     }
 
 }
