@@ -22,17 +22,9 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        //  driverManager = new DriverManagerFactory().getManager(DriverType.FIREFOX);
-        // ToDo: переделать на Factory
 
         driver = BrowserFactory.getDriver();
-        //  driver = DriverSingletonClass.getInstance().getDriver();
-       /* if(driver == null){
-            //initialize your driver
-                    driver = BrowserFactory.initializeDriver();
-        }*/
-
-        driver.get("https://demoqa.com/");
+        driver.get(BrowserFactory.prop.getProperty("url"));
     }
 
     public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {

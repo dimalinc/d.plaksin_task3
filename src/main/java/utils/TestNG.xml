@@ -28,7 +28,7 @@
 
     <test name="Test6_Calendar">
         <classes>
-            <class name="Test4_Handles"/>
+            <class name="Test6_Calendar"/>
         </classes>
     </test>
     <!-- Test -->

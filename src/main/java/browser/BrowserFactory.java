@@ -12,6 +12,8 @@ import java.util.Properties;
 
 public class BrowserFactory {
     private static WebDriver driver;
+    public static Properties prop;
+
 
     public static WebDriver getDriver() {
         if (driver == null)
@@ -19,8 +21,7 @@ public class BrowserFactory {
         return driver;
     }
 
-    public static WebDriver initializeDriver() {
-        Properties prop;
+    public static void initProperties() {
         prop = new Properties();
         try {
             FileInputStream fis =
@@ -30,8 +31,13 @@ public class BrowserFactory {
             e.printStackTrace();
         }
 
-        String browserName = prop.getProperty("browser");
+    }
 
+    public static WebDriver initializeDriver() {
+
+        initProperties();
+
+        String browserName = prop.getProperty("browser");
 
 
         switch (browserName) {
