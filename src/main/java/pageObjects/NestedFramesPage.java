@@ -19,19 +19,15 @@ public class NestedFramesPage extends BaseForm{
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-
     public DivNestedFrames getDivNestedFrames() {
         return divNestedFrames;
     }
-
     public Iframe1 getIframe1() {
         return iframe1;
     }
-
     public Iframe2 getIframe2() {
         return iframe2;
     }
-
     public Button_AlertsFrameAndWindows_Frames getButton_alertsFrameAndWindows_frames() {
         return button_alertsFrameAndWindows_frames;
     }
