@@ -17,7 +17,7 @@ public class LinksPage extends BaseForm{
             "Add new record Button in Web Tables page");
 
     public LinksPage() {
-    super(uniqueElement);
+    super(uniqueElement,"LinksPage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;

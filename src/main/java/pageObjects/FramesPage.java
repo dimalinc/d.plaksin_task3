@@ -18,7 +18,7 @@ public class FramesPage extends BaseForm{
             "Frame2 on Frames page");
 
     public FramesPage() {
-    super(uniqueElement);
+    super(uniqueElement,"FramesPage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;

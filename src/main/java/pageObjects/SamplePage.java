@@ -12,7 +12,7 @@ public class SamplePage extends BaseForm{
     private Label sampleHeading = new Label(By.xpath("//h1[@id='sampleHeading']"),
             "Sample Page heading");
     public SamplePage() {
-    super(uniqueElement);
+    super(uniqueElement,"SamplePage");
     }
     public  BaseElement getUniqueElement() {
         return uniqueElement;

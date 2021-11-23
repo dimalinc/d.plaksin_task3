@@ -17,7 +17,7 @@ public class ElementsPage extends BaseForm {
             "Add new record Button in Web Tables page");
 
     public ElementsPage() {
-        super(uniqueElement);
+        super(uniqueElement,"ElementsPage");
     }
 
     public static BaseElement getUniqueElement() {

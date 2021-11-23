@@ -23,7 +23,7 @@ public class NestedFramesPage extends BaseForm{
     private Button_AlertsFrameAndWindows_NestedFrames button_alertsFrameAndWindows_nestedFrames = new Button_AlertsFrameAndWindows_NestedFrames();
 
     public NestedFramesPage() {
-    super(uniqueElement);
+    super(uniqueElement,"NestedFramesPage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;

@@ -25,7 +25,7 @@ public class DatePickerPage extends BaseForm{
                 "Datepicker Day 29 actual month");
 
     public DatePickerPage() {
-    super(uniqueElement);
+    super(uniqueElement,"DatePickerPage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;

@@ -51,7 +51,7 @@ public class RegistrationForm extends BaseForm {
     }
 
     public RegistrationForm() {
-        super(uniqueElement);
+        super(uniqueElement,"RegistrationForm");
     }
 
     public void fillInData(HashMap<String, String> dataSet) {

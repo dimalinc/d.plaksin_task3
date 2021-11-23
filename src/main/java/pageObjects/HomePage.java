@@ -50,7 +50,7 @@ public class HomePage extends BaseForm{
         return button_widgets;
     }
     public HomePage() {
-    super(uniqueElement);
+    super(uniqueElement,"HomePage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;

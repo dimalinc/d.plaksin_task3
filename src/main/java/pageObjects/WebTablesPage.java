@@ -37,7 +37,7 @@ public class WebTablesPage extends BaseForm{
         else return false;
     }
     public WebTablesPage() {
-    super(uniqueElement);
+    super(uniqueElement,"WebTablesPage");
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;
