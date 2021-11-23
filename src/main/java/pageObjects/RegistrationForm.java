@@ -1,6 +1,10 @@
 package pageObjects;
 
 import elements.*;
+import elements.baseicelements.Button;
+import elements.baseicelements.Image;
+import elements.baseicelements.Input;
+import elements.baseicelements.Label;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -9,19 +13,28 @@ import java.util.List;
 
 public class RegistrationForm extends BaseForm {
 
-    private static final BaseElement uniqueElement = new RegFormTitle();
-    private RegFormTitle regFormTitle = new RegFormTitle();
+    private static final BaseElement uniqueElement = new Label(By.xpath("//*[@id=\"registration-form-modal\"]"),
+            "Registration Form Title");
+    private Label regFormTitle = new Label(By.xpath("//*[@id=\"registration-form-modal\"]"),
+            "Registration Form Title");
 
-
-    private InputDepartment inputDepartment = new InputDepartment();
-    private InputAge inputAge = new InputAge();
-    private InputEmail inputEmail = new InputEmail();
-    private InputFirstName inputFirstName = new InputFirstName();
-    private InputLastName inputLastName = new InputLastName();
-    private InputSalary inputSalary = new InputSalary();
-    private Button_Submit_RegForm button_submit_regForm = new Button_Submit_RegForm();
-    private Button_Delete_FromWebTable button_delete_fromWebTable = new Button_Delete_FromWebTable();
-    private TrashBinForListGeneralXpath trashBinForListGeneralXpath = new TrashBinForListGeneralXpath();
+    private Input inputDepartment = new Input(By.xpath("//input[@id='department']"),
+            "Input Department");
+    private Input inputAge = new Input(By.xpath("//input[@id='age']"),"Input Age");
+    private Input inputEmail = new Input(By.xpath("//input[@id='userEmail']"),
+            "Input Email");
+    private Input inputFirstName = new Input(By.xpath("//input[@id='firstName']"),
+            "Input First Name");
+    private Input inputLastName = new Input(By.xpath("//input[@id='lastName']"),
+            "Input Last Name");
+    private Input inputSalary = new Input(By.xpath("//input[@id='salary']"),
+            "Input Salary");
+    private Button button_submit_regForm = new Button(By.xpath("//button[@id='submit']"),
+            "Submit registration form button");
+    private Button button_delete_fromWebTable = new Button(By.cssSelector("div.body-height:nth-child(2) div.container.playgound-body div.row div.col-12.mt-4.col-md-6:nth-child(2) div.web-tables-wrapper div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody div.rt-tr-group:nth-child(4) div.rt-tr.-even div.rt-td:nth-child(7) div.action-buttons span:nth-child(2) svg:nth-child(1) > path:nth-child(1)"),
+            "Delete element from WebTable button");
+    private Image trashBinForListGeneralXpath = new Image(By.xpath("//*[contains(@id,'delete-record')]"),
+            "General Trash Bins xpath (contains)");
 
 
 
@@ -34,7 +47,7 @@ public class RegistrationForm extends BaseForm {
     }
 
 
-    public TrashBinForListGeneralXpath getTrashBinForListGeneralXpath() {
+    public Image getTrashBinForListGeneralXpath() {
         return trashBinForListGeneralXpath;
     }
 
@@ -59,43 +72,43 @@ public class RegistrationForm extends BaseForm {
         return uniqueElement;
     }
 
-    public RegFormTitle regFormTitle() {
+    public Label regFormTitle() {
         return regFormTitle;
     }
 
-    public InputDepartment getInputDepartment() {
+    public Input getInputDepartment() {
         return inputDepartment;
     }
 
-    public InputAge getInputAge() {
+    public Input getInputAge() {
         return inputAge;
     }
 
-    public InputEmail getInputEmail() {
+    public Input getInputEmail() {
         return inputEmail;
     }
 
-    public InputFirstName getInputFirstName() {
+    public Input getInputFirstName() {
         return inputFirstName;
     }
 
-    public InputLastName getInputLastName() {
+    public Input getInputLastName() {
         return inputLastName;
     }
 
-    public InputSalary getInputSalary() {
+    public Input getInputSalary() {
         return inputSalary;
     }
 
-    public Button_Submit_RegForm getButton_submit_regForm() {
+    public Button getButton_submit_regForm() {
         return button_submit_regForm;
     }
 
-    public Button_Delete_FromWebTable getButton_delete_fromWebTable() {
+    public Button getButton_delete_fromWebTable() {
         return button_delete_fromWebTable;
     }
 
-    public RegFormTitle getRegFormTitle() {
+    public Label getRegFormTitle() {
         return regFormTitle;
     }
 }

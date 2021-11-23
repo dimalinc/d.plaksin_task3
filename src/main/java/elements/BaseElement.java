@@ -8,6 +8,11 @@ import org.openqa.selenium.WebElement;
 public abstract class BaseElement {
 
     protected By locator;
+
+    public String getElementName() {
+        return elementName;
+    }
+
     protected String elementName;
 
     public BaseElement(By locator, String elementName) {

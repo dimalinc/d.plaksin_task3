@@ -1,17 +1,11 @@
-import browser.DriverSingletonClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObjects.ElementsPage;
 import pageObjects.HomePage;
 import pageObjects.RegistrationForm;
 import pageObjects.WebTablesPage;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,20 +1,28 @@
 package pageObjects;
 
 import elements.*;
+import elements.baseicelements.Button;
+import elements.baseicelements.Div;
+import elements.baseicelements.Table;
+import org.openqa.selenium.By;
 
 import java.util.HashMap;
 
 public class WebTablesPage extends BaseForm{
 
     private static final BaseElement uniqueElement = new DivFrameWebTables();
-    private DivFrameWebTables divFrameWebTables = new DivFrameWebTables();
-    private Button_Elements_WebTables button_elements_webTables = new Button_Elements_WebTables();
-    private Button_Elements_WebTables_AddRecord button_elements_webTables_addRecord = new Button_Elements_WebTables_AddRecord();
-    private ReactTable reactTable = new ReactTable();
-    public ReactTable getReactTable() {
+    private Div divFrameWebTables = new Div(By.xpath("//div[contains(text(),'Web Tables')]"),
+            "Main header div - Web Tables");
+    private Button button_elements_webTables = new Button(By.xpath("//span[contains(text(),'Web Tables')]"),
+            "Web Tables");
+    private Button button_elements_webTables_addRecord = new Button(By.xpath("//button[@id='addNewRecordButton']"),
+            "Add new record Button in Web Tables page");
+    private Table reactTable = new Table(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[1]/div[3]"),
+            "React table");
+
+    public Table getReactTable() {
         return reactTable;
     }
-
     public boolean tableContainsDataProvided(HashMap<String, String> dataSet) {
         if (
                 getReactTable().getText().contains(dataSet.get("FirstName"))||
@@ -27,23 +35,19 @@ public class WebTablesPage extends BaseForm{
         return true;
         else return false;
     }
-
     public WebTablesPage() {
     super(uniqueElement);
     }
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-
-    public DivFrameWebTables getDivFrameWebTables() {
+    public Div getDivFrameWebTables() {
         return divFrameWebTables;
     }
-
-    public Button_Elements_WebTables getButton_elements_webTables() {
+    public Button getButton_elements_webTables() {
         return button_elements_webTables;
     }
-
-    public Button_Elements_WebTables_AddRecord getButton_elements_webTables_addRecord() {
+    public Button getButton_elements_webTables_addRecord() {
         return button_elements_webTables_addRecord;
     }
 }
