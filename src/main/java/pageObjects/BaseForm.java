@@ -14,9 +14,7 @@ public abstract class BaseForm {
     }
 
     public boolean isOpen() {
-        // Todo - написать проверку загрузился ли
-        // return uniqueElement.exists();
-        return BrowserFactory.getDriver().findElements
-                (uniqueElement.getLocator()).size() > 0 ;
+        return uniqueElement.isDisplayed();
+
     }
 }
