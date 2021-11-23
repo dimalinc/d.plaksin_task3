@@ -46,7 +46,6 @@ public class RegistrationForm extends BaseForm {
         else return false;
     }
 
-
     public Image getTrashBinForListGeneralXpath() {
         return trashBinForListGeneralXpath;
     }

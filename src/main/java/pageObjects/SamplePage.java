@@ -2,6 +2,7 @@ package pageObjects;
 
 import elements.*;
 import elements.baseicelements.Label;
+import elements.disorganized.SampleHeading;
 import org.openqa.selenium.By;
 
 public class SamplePage extends BaseForm{

@@ -3,6 +3,7 @@ package pageObjects;
 import elements.*;
 import elements.baseicelements.Div;
 import elements.baseicelements.Frame;
+import elements.disorganized.DivFrames;
 import org.openqa.selenium.By;
 
 public class FramesPage extends BaseForm{

@@ -4,6 +4,7 @@ import elements.*;
 import elements.baseicelements.Button;
 import elements.baseicelements.Div;
 import elements.baseicelements.Table;
+import elements.disorganized.DivFrameWebTables;
 import org.openqa.selenium.By;
 
 import java.util.HashMap;
