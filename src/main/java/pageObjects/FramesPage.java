@@ -1,14 +1,20 @@
 package pageObjects;
 
 import elements.*;
+import elements.baseicelements.Div;
+import elements.baseicelements.Frame;
+import org.openqa.selenium.By;
 
 public class FramesPage extends BaseForm{
 
     private static final BaseElement uniqueElement = new DivFrames();
-    private DivFrames divFrames = new DivFrames();
+    private Div divFrames = new Div(By.xpath("//div[contains(text(),'Frames')]"),
+            "Main header div - Frames");
 
-    private Frame1 frame1 = new Frame1();
-    private Frame2 frame2 = new Frame2();
+    private Frame frame1 = new Frame(By.xpath("//iframe[@id='frame1']"),
+            "Frame1 on Frames page");
+    private Frame frame2 = new Frame(By.xpath("//iframe[@id='frame2']"),
+            "Frame2 on Frames page");
 
     public FramesPage() {
     super(uniqueElement);
@@ -16,13 +22,13 @@ public class FramesPage extends BaseForm{
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-    public DivFrames getDivFrames() {
+    public Div getDivFrames() {
         return divFrames;
     }
-    public Frame1 getFrame1() {
+    public Frame getFrame1() {
         return frame1;
     }
-    public Frame2 getFrame2() {
+    public Frame getFrame2() {
         return frame2;
     }
 }
