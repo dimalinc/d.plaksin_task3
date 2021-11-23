@@ -9,20 +9,15 @@ public class Test1_Alerts extends BaseTest {
 
     static final Logger rootLogger = LogManager.getRootLogger();
     static final Logger test1Logger = LogManager.getLogger(Test1_Alerts.class);
-    //   WebDriver driver = DriverSingletonClass.getInstance();
 
     @Test
     public void test() {
-
         //debug
         if (rootLogger.isDebugEnabled()) {
             rootLogger.debug("RootLogger: In debug message");
             test1Logger.debug("UserLogger in debug");
         }
 
-        // Todo - driverFactory
-        //  driverManager.openUrl("https://demoqa.com/");
-     //   driver.get("https://demoqa.com/");
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isOpen());
 
