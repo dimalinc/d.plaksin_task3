@@ -2,12 +2,12 @@ package pageObjects;
 
 import elements.*;
 import elements.baseicelements.Label;
-import elements.disorganized.SampleHeading;
 import org.openqa.selenium.By;
 
 public class SamplePage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new SampleHeading();
+    private static final BaseElement uniqueElement = new Label(By.xpath("//h1[@id='sampleHeading']"),
+            "Sample Page heading");
 
     private Label sampleHeading = new Label(By.xpath("//h1[@id='sampleHeading']"),
             "Sample Page heading");

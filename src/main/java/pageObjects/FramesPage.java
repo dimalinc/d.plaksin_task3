@@ -3,12 +3,12 @@ package pageObjects;
 import elements.*;
 import elements.baseicelements.Div;
 import elements.baseicelements.Frame;
-import elements.disorganized.DivFrames;
 import org.openqa.selenium.By;
 
 public class FramesPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrames();
+    private static final BaseElement uniqueElement = new Div(By.xpath("//div[contains(text(),'Frames')]"),
+            "Main header div - Frames");
     private Div divFrames = new Div(By.xpath("//div[contains(text(),'Frames')]"),
             "Main header div - Frames");
 

@@ -4,14 +4,14 @@ import elements.*;
 import elements.baseicelements.Button;
 import elements.baseicelements.Div;
 import elements.baseicelements.Table;
-import elements.disorganized.DivFrameWebTables;
 import org.openqa.selenium.By;
 
 import java.util.HashMap;
 
 public class WebTablesPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrameWebTables();
+    private static final BaseElement uniqueElement = new Div(By.xpath("//div[contains(text(),'Web Tables')]"),
+            "Main header div - Web Tables");
     private Div divFrameWebTables = new Div(By.xpath("//div[contains(text(),'Web Tables')]"),
             "Main header div - Web Tables");
     private Button button_elements_webTables = new Button(By.xpath("//span[contains(text(),'Web Tables')]"),
