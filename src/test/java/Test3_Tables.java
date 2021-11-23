@@ -22,8 +22,6 @@ public class Test3_Tables extends BaseTest {
     @Test(dataProvider = "getData")
     public void test(HashMap<String, String> dataSet) {
 
-        // Todo - driverFactory
-        //  driverManager.openUrl("https://demoqa.com/");
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isOpen());
         homePage.getButton_elements().click();

@@ -1,16 +1,28 @@
 package pageObjects;
 
 import elements.*;
+import elements.baseicelements.Button;
+import elements.baseicelements.Div;
+import elements.baseicelements.Input;
+import elements.baseicelements.Label;
+import org.openqa.selenium.By;
 
 public class DatePickerPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrameDatePicker();
-    private DivFrameDatePicker divFrameDatePicker = new DivFrameDatePicker();
-    private InputDate inputDate = new InputDate();
-    private InputDateAndTime inputDateAndTime = new InputDateAndTime();
-    private LabelTextMonthYear labelTextMonthYear = new LabelTextMonthYear();
-    private Button_NextMonth button_nextMonth = new Button_NextMonth();
-    private DatepickerDay29actualMonth datepickerDay29actualMonth = new DatepickerDay29actualMonth();
+    private static final BaseElement uniqueElement = new Div(By.xpath("//div[contains(text(),'Date Picker')]"),
+            "Main header div - Date Picker");
+    private Div divFrameDatePicker = new Div(By.xpath("//div[contains(text(),'Date Picker')]"),
+            "Main header div - Date Picker");
+    private Input inputDate = new Input(By.xpath("//*[@id=\"datePickerMonthYearInput\"]"),
+            "Input Date");
+    private Input inputDateAndTime = new Input(By.xpath("//*[@id=\"dateAndTimePickerInput\"]"),
+            "Input Date");
+    private Label labelTextMonthYear = new Label(By.xpath("//*[@class=\"react-datepicker__current-month react-datepicker__current-month--hasYearDropdown react-datepicker__current-month--hasMonthDropdown\"]"),
+            "Month, Year label");
+    private Button button_nextMonth = new Button(By.xpath("//button[contains(text(),'Next Month')]"),
+            "Button next month");
+    private Div datepickerDay29actualMonth = new Div(By.xpath("//div[contains(@class,'react-datepicker__day') and contains(@class,'react-datepicker__day--029') and not(contains(@class,'react-datepicker__day--outside-month'))]"),
+                "Datepicker Day 29 actual month");
 
     public DatePickerPage() {
     super(uniqueElement);
@@ -18,22 +30,22 @@ public class DatePickerPage extends BaseForm{
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-    public DivFrameDatePicker getDivFrameWebTables() {
+    public Div getDivFrameWebTables() {
         return divFrameDatePicker;
     }
-    public InputDate getInputDate() {
+    public Input getInputDate() {
         return inputDate;
     }
-    public LabelTextMonthYear getLabelTextMonthYear() {
+    public Label getLabelTextMonthYear() {
         return labelTextMonthYear;
     }
-    public DatepickerDay29actualMonth getDatepickerDay29actualMonth() {
+    public Div getDatepickerDay29actualMonth() {
         return datepickerDay29actualMonth;
     }
-    public Button_NextMonth getButton_nextMonth() {
+    public Button getButton_nextMonth() {
         return button_nextMonth;
     }
-    public InputDateAndTime getInputDateAndTime() {
+    public Input getInputDateAndTime() {
         return inputDateAndTime;
     }
 

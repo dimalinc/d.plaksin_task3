@@ -1,14 +1,20 @@
 package pageObjects;
 
 import elements.*;
+import elements.baseicelements.Button;
+import elements.baseicelements.Div;
 import org.openqa.selenium.By;
 
 public class LinksPage extends BaseForm{
 
-    private static final BaseElement uniqueElement = new DivFrameLinks();
-    private DivFrameLinks divFrame = new DivFrameLinks();
-    private Button_Elements_WebTables button_elements_webTables = new Button_Elements_WebTables();
-    private Button_Elements_WebTables_AddRecord button_elements_webTables_addRecord = new Button_Elements_WebTables_AddRecord();
+    private static final BaseElement uniqueElement = new Div(By.xpath("//div[contains(text(),'Links')]"),
+            "Main header div - Links");
+    private Div divFrame = new Div(By.xpath("//div[contains(text(),'Links')]"),
+            "Main header div - Links");
+    private Button button_elements_webTables = new Button(By.xpath("//span[contains(text(),'Web Tables')]"),
+            "Web Tables");
+    private Button button_elements_webTables_addRecord = new Button(By.xpath("//button[@id='addNewRecordButton']"),
+            "Add new record Button in Web Tables page");
 
     public LinksPage() {
     super(uniqueElement);
@@ -16,16 +22,10 @@ public class LinksPage extends BaseForm{
     public static BaseElement getUniqueElement() {
         return uniqueElement;
     }
-
-
-
-
-
-    public Button_Elements_WebTables getButton_elements_webTables() {
+    public Button getButton_elements_webTables() {
         return button_elements_webTables;
     }
-
-    public Button_Elements_WebTables_AddRecord getButton_elements_webTables_addRecord() {
+    public Button getButton_elements_webTables_addRecord() {
         return button_elements_webTables_addRecord;
     }
 }

@@ -13,15 +13,12 @@ import pageObjects.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class Test4_Handles extends BaseTest{
-
-  //  WebDriver driver = DriverSingletonClass.getInstance();
+public class Test4_Handles extends BaseTest {
 
     @Test
     public void test() {
 
 
-        driver.get("https://demoqa.com/");
         HomePage homePage = new HomePage();
         LinksPage linksPage = new LinksPage();
         Assert.assertTrue(homePage.isOpen());
@@ -31,16 +28,16 @@ public class Test4_Handles extends BaseTest{
         //Store the ID of the original window
         String originalWindow = driver.getWindowHandle();
 
-//Check we don't have other windows open already
+        //Check we don't have other windows open already
         assert driver.getWindowHandles().size() == 1;
 
 
         homePage.getButton_newTab().click();
         new Wait().getWait().until(numberOfWindowsToBe(2));
 
-//Loop through until we find a new window handle
+        //Loop through until we find a new window handle
         for (String windowHandle : driver.getWindowHandles()) {
-            if(!originalWindow.contentEquals(windowHandle)) {
+            if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
                 break;
             }
@@ -63,7 +60,7 @@ public class Test4_Handles extends BaseTest{
 
         originalWindow = driver.getWindowHandle();
 
-//Check we don't have other windows open already
+        //Check we don't have other windows open already
         assert driver.getWindowHandles().size() == 1;
 
         Actions actions = new Actions(driver);
@@ -74,10 +71,9 @@ public class Test4_Handles extends BaseTest{
         new Wait().getWait().until(numberOfWindowsToBe(2));
 
 
-
-//Loop through until we find a new window handle
+        //Loop through until we find a new window handle
         for (String windowHandle : driver.getWindowHandles()) {
-            if(!originalWindow.contentEquals(windowHandle)) {
+            if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
                 break;
             }
@@ -88,6 +84,5 @@ public class Test4_Handles extends BaseTest{
 
         Assert.assertTrue(linksPage.isOpen());
     }
-
 
 }
