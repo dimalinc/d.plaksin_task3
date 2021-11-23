@@ -1,23 +1,17 @@
-import browser.DriverSingletonClass;
 import browser.Wait;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pageObjects.*;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
-import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class Test4_Handles extends BaseTest {
 
     @Test
     public void test() {
-
 
         HomePage homePage = new HomePage();
         LinksPage linksPage = new LinksPage();
@@ -30,7 +24,6 @@ public class Test4_Handles extends BaseTest {
 
         //Check we don't have other windows open already
         assert driver.getWindowHandles().size() == 1;
-
 
         homePage.getButton_newTab().click();
         new Wait().getWait().until(numberOfWindowsToBe(2));
